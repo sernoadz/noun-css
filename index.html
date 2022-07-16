@@ -4,38 +4,240 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://tangerine-gaufre-f392c4.netlify.app/style-images.css">
-  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="noun.css">
+  <link rel="stylesheet"href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <title>NounCSS</title>
 </head>
 <body>
 
+  <style>
+    noun {
+      width: 100%;
+    }
+  </style>
 
-  <div style="display: flex;">
-    <noun class="
-      bg-cool
-      body-grayscale-9
-      accessory-bling-anchor
-      head-basketball
-      glasses-honey
-    ">
-    </noun>
-    <noun class="
-      bg-cool
-      body-bege-bsod
-      accessory-1n
-      head-aardvark
-      glasses-hip-rose
-    ">
-    </noun>
-    <noun class="
-      bg-warm
-      body-blue-sky
-      accessory-txt-yay
-      head-zebra
-      glasses-square-frog-green
-    ">
-    </noun>
+  <h1 class="py-10 text-6xl font-bold">NounCSS</h1>
+
+  <div class="px-5">
+    <p>NounCSS allows you to compose a custom Noun using just HTML/CSS.</p>
+
+    <ul class="flex space-x-10 py-16">
+      <li><a href="/" class="p-4 border-2 text-blue-700 cursor-pointer border-blue-300 bg-blue-200 text-4xl font-semibold">Usage</a></li>
+      <li><a href="traits.html" class="p-4 text-blue-700 cursor-pointer border-2 border-transparent text-4xl font-semibold">Trait Names</a></li>
+    </ul>
+
+    <p class="mb-5">Add the required CSS to your site.</p>
+
+    <pre><code class="language-html">
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://noun-css.netlify.app/noun.min.css&quot;&gt;
+    </pre></code>
+
+    <p class="mb-5 mt-8">Use the <code class="bg-pink-100 p-1 rounded-md">&lt;noun&gt;&lt;/noun&gt;</code> tag and compose your Noun.</p>
+
   </div>
+
+  <hr class="my-10" />
+
+  <h3 class="pb-10 px-5 text-4xl font-semibold">Examples</h3>
+
+  <h2 class="pb-10 px-5 text-2xl font-semibold">Default Noun</h2>
+  <div class="grid md:grid-cols-3 px-5 max-w-screen-xl mb-20">
+    <div>
+      <noun></noun>
+      <pre><code class="language-html">
+&lt;noun&gt;&lt;/noun&gt;
+      </pre></code>
+    </div>
+  </div>
+
+  <h2 class="py-10 px-5 text-2xl font-semibold">Using Trait Names</h2>
+  <div class="grid md:grid-cols-3 px-5 max-w-screen-xl mb-20">
+    <div>
+      <noun
+        background="cool"
+        body="grayscale-9"
+        accessory="bling-anchor"
+        head="basketball"
+        glasses="yellow-orange-multi"
+      >
+      </noun>
+      <pre><code class="language-html">
+&lt;noun
+  background=&quot;cool&quot;
+  body=&quot;grayscale-9&quot;
+  accessory=&quot;bling-anchor&quot;
+  head=&quot;basketball&quot;
+  glasses=&quot;yellow-orange-multi&quot;
+&gt;&lt;/noun&gt;
+      </pre></code>
+    </div>
+    <div>
+      <noun
+      background="warm"
+      body="blue-sky"
+      accessory="txt-yay"
+      head="zebra"
+      glasses="frog-green"
+    >
+      </noun>
+      <pre><code class="language-html">
+&lt;noun
+  background=&quot;warm&quot;
+  body=&quot;blue-sky&quot;
+  accessory=&quot;txt-yay&quot;
+  head=&quot;zebra&quot;
+  glasses=&quot;frog-green&quot;
+&gt;&lt;/noun&gt;
+      </pre></code>
+    </div>
+    <div>
+      <noun
+      background="cool"
+      body="rust"
+      accessory="axe"
+      head="moose"
+      glasses="guava"
+    >
+      </noun>
+      <pre><code class="language-html">
+&lt;noun
+  background=&quot;cool&quot;
+  body=&quot;rust&quot;
+  accessory=&quot;axe&quot;
+  head=&quot;moose&quot;
+  glasses=&quot;guava&quot;
+&gt;&lt;/noun&gt;
+      </pre></code>
+    </div>
+  </div>
+
+  <h2 class="py-10 px-5 text-2xl font-semibold">Using Trait IDs (Starting at 0)</h2>
+  <div class="grid md:grid-cols-3 px-5 max-w-screen-xl mb-20">
+    <div>
+      <noun
+      body="3"
+      accessory="12"
+      head="154"
+      glasses="12"
+    >
+      </noun>
+      <pre><code class="language-html">
+&lt;noun
+  background=&quot;0&quot;
+  body=&quot;3&quot;
+  accessory=&quot;12&quot;
+  head=&quot;154&quot;
+  glasses=&quot;12&quot;
+&gt;&lt;/noun&gt;
+      </pre></code>
+    </div>
+    <div>
+      <noun
+      background="1"
+      body="8"
+      accessory="47"
+      head="212"
+      glasses="19"
+    >
+      </noun>
+      <pre><code class="language-html">
+&lt;noun
+  background=&quot;1&quot;
+  body=&quot;8&quot;
+  accessory=&quot;47&quot;
+  head=&quot;212&quot;
+  glasses=&quot;19&quot;
+&gt;&lt;/noun&gt;
+      </pre></code>
+    </div>
+    <div>
+      <noun
+      background="0"
+      body="16"
+      accessory="87"
+      head="221"
+      glasses="3"
+    >
+      </noun>
+      <pre><code class="language-html">
+&lt;noun
+  background=&quot;0&quot;
+  body=&quot;16&quot;
+  accessory=&quot;87&quot;
+  head=&quot;221&quot;
+  glasses=&quot;3&quot;
+&gt;&lt;/noun&gt;
+      </pre></code>
+    </div>
+  </div>
+
+  <h2 class="py-10 px-5 text-2xl font-semibold">Custom BG Colors (Using Tailwind CSS Classes)</h2>
+  <div class="grid md:grid-cols-3 px-5 max-w-screen-xl mb-20">
+    <div>
+      <noun
+      class="bg-red-500"
+      body="yellow"
+      accessory="gradient-checkerdisco"
+      head="unicorn"
+      glasses="red"
+    >
+      </noun>
+      <pre><code class="language-html">
+&lt;noun
+  class=&quot;bg-red-500&quot;
+  body=&quot;yellow&quot;
+  accessory=&quot;gradient-checkerdisco&quot;
+  head=&quot;unicorn&quot;
+  glasses=&quot;red&quot;
+&gt;&lt;/noun&gt;
+      </pre></code>
+    </div>
+
+    <div>
+      <noun
+      class="bg-green-500"
+      body="rust"
+      accessory="txt-lol"
+      head="taxi"
+      glasses="watermelon"
+    >
+      </noun>
+      <pre><code class="language-html">
+&lt;noun
+  class=&quot;bg-green-500&quot;
+  body=&quot;rust&quot;
+  accessory=&quot;txt-lol&quot;
+  head=&quot;taxi&quot;
+  glasses=&quot;watermelon&quot;
+&gt;&lt;/noun&gt;
+      </pre></code>
+    </div>
+
+    <div>
+      <noun
+      class="bg-blue-500"
+      body="magenta"
+      accessory="stripes-red-cold"
+      head="void"
+      glasses="grey-light"
+    >
+      </noun>
+      <pre><code class="language-html">
+&lt;noun
+  class=&quot;bg-blue-500&quot;
+  body=&quot;magenta&quot;
+  accessory=&quot;stripes-red-cold&quot;
+  head=&quot;void&quot;
+  glasses=&quot;grey-light&quot;
+&gt;&lt;/noun&gt;
+      </pre></code>
+    </div>
+
+  </div>
+
+  <script>hljs.highlightAll();</script>
 
 </body>
 </html>
